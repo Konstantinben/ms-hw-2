@@ -1,0 +1,37 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels: 
+    type: deployment-healthcheck-app
+    owner: Konstantin_Polyanichko
+spec:
+  replicas: 3
+  selector:
+      matchLabels:
+        project: mshw2
+  template:
+    metadata:
+      labels:
+        project: mshw2
+    spec:
+      containers:
+        - name: healthcheck-app
+          image: kpolyanichko/ms-homework-amd64:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service
+  labels:
+    type: service-healthcheck-app
+    owner: Konstantin_Polyanichko
+spec:
+  selector:
+    project: mshw2
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080

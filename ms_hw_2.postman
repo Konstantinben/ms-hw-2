@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "d5c9a5cb-f8d8-4c17-91a1-26dcef1560f6",
+		"name": "microservices_homework_2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5562917"
+	},
+	"item": [
+		{
+			"name": "arch.homework/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/health",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rewrite /otusapp/{student name}/* to /health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/otusapp/aaa-Student-aaa/blablabla",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"otusapp",
+						"aaa-Student-aaa",
+						"blablabla"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
